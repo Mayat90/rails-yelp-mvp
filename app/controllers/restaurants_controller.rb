@@ -6,6 +6,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(restaurant_id: @restaurant.id)
+    #@avg_reviews = @reviews.rating.to_i / @reviews.count.to_i
   end
 
   def new

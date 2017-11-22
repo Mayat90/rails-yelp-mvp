@@ -1,3 +1,4 @@
+  <div class="container">
   <h2><%= @restaurant.name %></h2>
   <p><%= @restaurant.address %></p>
   <p><%= @restaurant.category %></p>
@@ -5,9 +6,11 @@
   <p><%= link_to "Back", restaurants_path %> </p>
   <h2> Reviews </h2>
 
-  <!-- Review.where(restaurant_id: @restaurant.id) -->
-  <p><% @restaurant.reviews.each do |r| %>
-  <%= r.content %>
-  <%= r.rating %>
-  <% end %></p>
+  <!-- @restaurant.reviews fonctionne également -->
+  <% @reviews.each do |r| %>
+  <p><%= r.content %></p>
+  <p><%= r.rating %></p>
+  <% end %>
+  <p> Average rating: <%=@avg_reviews%>
   <p><%= link_to "Post a Review", new_restaurant_review_path(@restaurant) %> </p>
+</div>

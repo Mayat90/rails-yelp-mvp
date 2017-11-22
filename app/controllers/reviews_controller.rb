@@ -17,12 +17,9 @@ class ReviewsController < ApplicationController
       render :new
     end
 
-  end
-
   private
 
   def set_restaurant
-    p "======= je suis la"
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
